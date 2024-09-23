@@ -1,3 +1,5 @@
 /.venv
 /.vscode
 qa_system_cpu.*
+output.txt
+/__pycache__
