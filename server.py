@@ -21,12 +21,10 @@ model = QASystem(args.knowledge, args.questions)
 # Create an endpoint
 @server.route("/qasystem", DataTypes.TEXT)
 def process_text(inputs: list, parameters: dict) -> dict:
-    # questions = [e["text"] for e in inputs
-    res = model.generate_unique_answer("What is NumPy")  # Use the model to generate answers
-    print(res)
-    res2 = [TextResult(text=res)]
-    response = ResponseModel(results=res2)
-    return response.get_response()
+    questions = [e["text"] for e in inputs]
+    results = [TextResult(text=question["text"], result = model.generate_unique_answer(question)) for question in questions]
+    response = ResponseModel(results=results)
+    return response.get_response()    
 
 if __name__ == '__main__':
     server.run()
