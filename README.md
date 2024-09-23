@@ -14,12 +14,12 @@ The QASystem project is a Question-Answering (QA) system that utilizes embedding
 
 ```
 QASystem/
-├── QASystemModel.py      # Contains the QASystem class
-├── server.py             # Flask server implementation
-├── knowledge.txt         # Sample knowledge base (Q&A pairs)
-├── questions.txt         # Sample questions file
-├── client.py             # Client to interact with the server
-└── README.md             # Project documentation
+├── QA_system.py               # Contains the QASystem class
+├── server.py                  # Flask-ML server implementation
+├── numpy_qa_store.txt         # Sample knowledge base (Q&A pairs)
+├── numpy_questions.txt        # Sample questions file
+├── client.py                  # Client to interact with the server
+└── README.md                  # Project documentation
 ```
 
 ## Setup
