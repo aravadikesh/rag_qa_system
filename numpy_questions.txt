@@ -1,0 +1,12 @@
+What is NumPy and why is it used in scientific computing?
+How does NumPy differ from Python lists in terms of performance?
+What are the different ways to create arrays in NumPy?
+How can you perform mathematical operations on arrays in NumPy?
+What is broadcasting in NumPy and how does it work?
+How can NumPy help with matrix operations?
+How do you generate random numbers and arrays using NumPy?
+What are the key benefits of using NumPy for handling large datasets?
+How does NumPy handle missing or invalid data in arrays?
+How do you save and load NumPy arrays to and from files?
+
+

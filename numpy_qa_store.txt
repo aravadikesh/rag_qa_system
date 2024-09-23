@@ -1,0 +1,56 @@
+What is NumPy?	NumPy is a fundamental package for scientific computing in Python. It provides support for arrays, matrices, and many high-level mathematical functions to operate on these arrays.
+What is a NumPy array?	A NumPy array is a grid of values, all of the same type, indexed by a tuple of non-negative integers. It is similar to a Python list, but NumPy arrays are more efficient and provide more functionality.
+How do you create a NumPy array?	You can create a NumPy array using the np.array() function. Example: `import numpy as np; arr = np.array([1, 2, 3])`.
+What is the difference between a Python list and a NumPy array?	A NumPy array is faster, can be multidimensional, and supports vectorized operations, unlike a Python list.
+How do you create an array of zeros in NumPy?	You can create an array of zeros using the np.zeros() function. Example: `np.zeros((3, 3))` creates a 3x3 array filled with zeros.
+How do you create an array of ones in NumPy?	You can create an array of ones using the np.ones() function. Example: `np.ones((2, 4))` creates a 2x4 array filled with ones.
+How do you create an array with a range of values in NumPy?	You can create a range of values using the np.arange() function. Example: `np.arange(0, 10, 2)` creates an array from 0 to 9 with a step of 2.
+How do you create a NumPy array with random values?	You can use the np.random.random() function to create an array of random values between 0 and 1. Example: `np.random.random((3, 3))`.
+What is broadcasting in NumPy?	Broadcasting allows NumPy to work with arrays of different shapes during arithmetic operations. It automatically expands the smaller array to match the shape of the larger array.
+How do you reshape an array in NumPy?	You can reshape an array using the np.reshape() function. Example: `np.reshape(arr, (3, 2))` reshapes an array to 3 rows and 2 columns.
+What is NumPy?	NumPy is a core Python library used for scientific computing. It provides support for arrays, matrices, and high-level mathematical functions to operate on these structures.
+What is a NumPy array?	A NumPy array is a multi-dimensional, homogeneous array that contains elements of the same type. It's similar to a Python list but allows for more efficient operations on large data sets.
+How do you install NumPy?	You can install NumPy using pip: `pip install numpy`. Alternatively, you can install it through Anaconda using: `conda install numpy`.
+How do you import NumPy in Python?	You can import NumPy in Python by using the command `import numpy as np`.
+How do you create a 1D array in NumPy?	To create a 1D array, you can use the np.array() function. Example: `arr = np.array([1, 2, 3])` creates a 1D array.
+How do you create a 2D array in NumPy?	To create a 2D array, use the np.array() function with nested lists. Example: `arr = np.array([[1, 2], [3, 4]])` creates a 2D array.
+What is the shape of a NumPy array?	The shape of a NumPy array represents its dimensions. You can check the shape using the `arr.shape` attribute.
+How do you change the shape of a NumPy array?	You can change the shape of an array using the np.reshape() function. Example: `arr = arr.reshape(2, 3)`.
+How do you create an array filled with zeros in NumPy?	You can create an array filled with zeros using `np.zeros()`. Example: `arr = np.zeros((3, 4))` creates a 3x4 array of zeros.
+How do you create an array filled with ones in NumPy?	To create an array filled with ones, use `np.ones()`. Example: `arr = np.ones((2, 3))` creates a 2x3 array of ones.
+How do you generate a range of numbers in NumPy?	You can use the `np.arange()` function to generate a range of numbers. Example: `np.arange(0, 10, 2)` generates [0, 2, 4, 6, 8].
+How do you create an array of random numbers in NumPy?	You can use `np.random.random()` to create an array of random values between 0 and 1. Example: `arr = np.random.random((3, 3))`.
+What is NumPy broadcasting?	Broadcasting refers to the ability of NumPy to perform operations on arrays of different shapes, by automatically expanding the smaller array to match the shape of the larger one.
+How do you find the maximum value in a NumPy array?	You can use the `np.max()` function to find the maximum value in an array. Example: `np.max(arr)` returns the largest element.
+How do you find the minimum value in a NumPy array?	The `np.min()` function finds the minimum value in an array. Example: `np.min(arr)` returns the smallest element.
+How do you compute the sum of all elements in a NumPy array?	You can use `np.sum()` to calculate the sum of all elements in an array. Example: `np.sum(arr)`.
+How do you compute the mean of a NumPy array?	Use `np.mean()` to compute the average value. Example: `np.mean(arr)` computes the mean of the array elements.
+How do you compute the standard deviation of a NumPy array?	You can use the `np.std()` function to compute the standard deviation. Example: `np.std(arr)` gives the standard deviation of the array elements.
+How do you flatten a NumPy array?	To flatten an array (convert a multi-dimensional array to 1D), use the `arr.flatten()` method.
+How do you concatenate two arrays in NumPy?	You can concatenate arrays using `np.concatenate()`. Example: `np.concatenate((arr1, arr2))` joins two arrays along an axis.
+How do you perform element-wise addition of two NumPy arrays?	Use the `+` operator for element-wise addition. Example: `arr1 + arr2` adds corresponding elements from both arrays.
+How do you transpose a NumPy array?	Use the `arr.T` attribute to transpose an array. This operation swaps the array's rows and columns.
+What is the difference between np.array() and np.asarray()?	`np.array()` always makes a copy of the input data, while `np.asarray()` does not copy the input data if it is already a NumPy array.
+How do you perform matrix multiplication in NumPy?	You can use the `np.dot()` function or the `@` operator to perform matrix multiplication. Example: `np.dot(arr1, arr2)` or `arr1 @ arr2`.
+What is the purpose of np.linspace()?	The `np.linspace()` function returns evenly spaced numbers over a specified interval. Example: `np.linspace(0, 1, 5)` generates [0., 0.25, 0.5, 0.75, 1.].
+How do you calculate the cumulative sum of elements in a NumPy array?	Use the `np.cumsum()` function to calculate the cumulative sum. Example: `np.cumsum(arr)`.
+How do you check for missing values (NaN) in a NumPy array?	You can use `np.isnan()` to check for NaN values. Example: `np.isnan(arr)` returns a boolean array indicating NaN locations.
+How do you replace NaN values in a NumPy array?	Use `np.nan_to_num()` to replace NaN values with a specified value, often 0. Example: `np.nan_to_num(arr)`.
+What is np.where() used for?	The `np.where()` function is used for conditional element selection. Example: `np.where(arr > 5, arr, 0)` replaces values greater than 5 with themselves, and others with 0.
+How do you sort a NumPy array?	Use `np.sort()` to sort an array. Example: `np.sort(arr)` sorts the array elements in ascending order.
+How do you get the indices of sorted elements in a NumPy array?	You can use `np.argsort()` to get the indices of the sorted elements. Example: `np.argsort(arr)` returns the indices of the sorted array elements.
+How do you copy a NumPy array?	You can create a copy of an array using `arr.copy()`. This ensures that modifications to the new array do not affect the original array.
+What is the use of np.unique()?	`np.unique()` returns the sorted unique elements in an array. Example: `np.unique(arr)` removes duplicates and sorts the array.
+How do you stack two arrays vertically in NumPy?	You can use `np.vstack()` to stack arrays vertically. Example: `np.vstack((arr1, arr2))` stacks arr1 on top of arr2.
+How do you stack two arrays horizontally in NumPy?	Use `np.hstack()` to stack arrays horizontally. Example: `np.hstack((arr1, arr2))` places arr1 and arr2 side by side.
+What is the difference between np.hstack() and np.vstack()?	`np.hstack()` stacks arrays horizontally, side by side, while `np.vstack()` stacks them vertically, one on top of the other.
+How do you find the number of dimensions in a NumPy array?	You can check the number of dimensions using the `arr.ndim` attribute. Example: `arr.ndim` returns the number of dimensions of the array.
+How do you find the data type of elements in a NumPy array?	Use the `arr.dtype` attribute to find the data type of elements in a NumPy array. Example: `arr.dtype` returns the data type of the array elements.
+What is the use of np.squeeze()?	`np.squeeze()` removes single-dimensional entries from the shape of an array. Example: `np.squeeze(arr)` removes dimensions with size 1.
+How do you generate random integers in NumPy?	You can generate random integers using `np.random.randint()`. Example: `np.random.randint(1, 10, size=(3, 3))` generates a 3x3 array of random integers between 1 and 9.
+What is np.meshgrid() used for?	`np.meshgrid()` creates coordinate matrices from coordinate vectors. It's often used for creating 2D grids.
+How do you find the index of the maximum value in a NumPy array?	Use `np.argmax()` to find the index of the maximum value. Example: `np.argmax(arr)` returns the index of the max value in the array.
+How do you find the index of the minimum value in a NumPy array?	You can use `np.argmin()` to find the index of the minimum value. Example: `np.argmin(arr)` returns the index of the smallest value.
+How do you find the median of a NumPy array?	Use `np.median()` to compute the median. Example: `np.median(arr)` returns the median value.
+How do you generate a random sample in NumPy?	You can use `np.random.choice()` to generate a random sample from an array. Example: `np.random.choice(arr)` samples a random element from the array.
+How do you shuffle the elements of a NumPy array?	Use `np.random.shuffle()` to shuffle the elements of an array in place. Example: `np.random.shuffle(arr)`
