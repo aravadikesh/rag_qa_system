@@ -21,6 +21,8 @@ class QASystem:
         self.embedding_model = None
         self.embedding_tokenizer = None
 
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
         self._load_qa_pairs()
         self._initialize_models()
 
@@ -45,8 +47,9 @@ class QASystem:
     def _initialize_models(self):
         logging.info("Loading embedding model and tokenizer...")
         embedding_model_name = 'sentence-transformers/all-MiniLM-L6-v2'
+        self.embedding_model = AutoModel.from_pretrained(embedding_model_name).to(self.device)
         self.embedding_tokenizer = AutoTokenizer.from_pretrained(embedding_model_name)
-        self.embedding_model = AutoModel.from_pretrained(embedding_model_name)
+        # self.embedding_model = AutoModel.from_pretrained(embedding_model_name)
         logging.info("Embedding model and tokenizer loaded successfully.")
 
         logging.info("Generating embeddings for questions...")
@@ -62,7 +65,8 @@ class QASystem:
         model_id = "microsoft/Phi-3-mini-128k-instruct"
         model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype="auto", trust_remote_code=True)
         tokenizer = AutoTokenizer.from_pretrained(model_id)
-        self.pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, device=-1)  # CPU mode
+        # self.pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, device=-1)  # CPU mode
+        self.pipe = pipeline("text-generation", model=model, tokenizer=tokenizer, device=0 if torch.cuda.is_available() else -1)
         logging.info("Text generation model and tokenizer loaded successfully.")
 
     def _preprocess_text(self, text):
