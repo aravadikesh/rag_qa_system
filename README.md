@@ -12,27 +12,37 @@ The QASystem project is a Question-Answering (QA) system that utilizes embedding
 
 ## Project Structure
 
+```
 QASystem/
 ├── QASystemModel.py      # Contains the QASystem class
-├── server.py              # Flask server implementation
-├── knowledge.txt          # Sample knowledge base (Q&A pairs)
-├── questions.txt          # Sample questions file
-├── client.py              # Client to interact with the server
-└── README.md              # Project documentation
+├── server.py             # Flask server implementation
+├── knowledge.txt         # Sample knowledge base (Q&A pairs)
+├── questions.txt         # Sample questions file
+├── client.py             # Client to interact with the server
+└── README.md             # Project documentation
+```
 
 ## Setup
 
-# Create a virtual environment
+Create a virtual environment:
+
+```bash
 python -m venv venv
+```
 
-# Activate the virtual environment
-# On Windows
+Activate the virtual environment:
+
+On Windows:
+```bash
 venv\Scripts\activate
+```
 
-# On macOS/Linux
+On macOS/Linux:
+```bash
 source venv/bin/activate
+```
 
-You can install the required libraries using pip:
+Install the required libraries using pip:
 
 ```bash
 pip install -r requirements.txt
@@ -45,21 +55,24 @@ pip install -r requirements.txt
 You can run the QA system directly from the command line using the following command:
 
 ```bash
-python python QA_system.py --knowledge_path knowledge.txt --questions_path questions.txt --prompt "What is NumPy?"
+python QA_system.py --knowledge_path knowledge.txt --questions_path questions.txt --prompt "What is NumPy?"
 ```
---knowledge_path: Path to the file containing Q&A pairs.
---questions_path: Path to the file containing questions to be answered.
---prompt: An optional question to ask directly via CLI.
+
+- `--knowledge_path`: Path to the file containing Q&A pairs.
+- `--questions_path`: Path to the file containing questions to be answered.
+- `--prompt`: An optional question to ask directly via CLI.
 
 ### 2. Flask-ML
+
+Start the server:
 
 ```bash
 python server.py --knowledge_path knowledge.txt --questions_path questions.txt
 ```
 
-In a separate terminal window, you can interact with the server using the client.py script. You can specify the inputs to be sent to the server as shown below:
+In a separate terminal window, you can interact with the server using the `client.py` script. You can specify the inputs to be sent to the server as shown below:
 
-```python 
+```python
 inputs = [
     {"text": "What is NumPy?"}
 ]
@@ -70,11 +83,4 @@ Then run the client via the following:
 ```bash
 python client.py
 ```
-
-
-
-
-
-
-
 
