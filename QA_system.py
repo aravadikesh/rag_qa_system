@@ -139,7 +139,6 @@ class QASystem:
 
         return unique_answers
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the QA system.")
     parser.add_argument('--knowledge_path', type=str, required=True, help="Path to the knowledge file with Q&A pairs")
