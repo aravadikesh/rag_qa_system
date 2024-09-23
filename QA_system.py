@@ -87,7 +87,7 @@ class QASystem:
         index.add(embeddings)
         return index
 
-    def generate_unique_answer(self, prompt, top_k=3, max_new_tokens=30):
+    def generate_unique_answer(self, prompt, top_k=3, max_new_tokens=200):
         try:
             preprocessed_prompt = self._preprocess_text(prompt)
             prompt_embedding = self._get_embeddings([preprocessed_prompt])[0]
