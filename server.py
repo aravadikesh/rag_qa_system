@@ -21,10 +21,15 @@ model = QASystem(args.knowledge, args.questions)
 # Create an endpoint
 @server.route("/qasystem", DataTypes.TEXT)
 def process_text(inputs: list, parameters: dict) -> dict:
-    questions = [e["text"] for e in inputs]
-    results = [TextResult(text=question["text"], result = model.generate_unique_answer(question)) for question in questions]
+    # Create a list of TextResult objects by generating answers for each input's text field
+    results = [TextResult(text=input_obj.text, result=model.generate_unique_answer(input_obj.text)) for input_obj in inputs]
+    
+    # Create a response model containing the list of results
     response = ResponseModel(results=results)
-    return response.get_response()    
+    
+    # Return the final response
+    return response.get_response()
+
 
 if __name__ == '__main__':
     server.run()
