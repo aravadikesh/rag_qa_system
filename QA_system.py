@@ -75,11 +75,17 @@ class QASystem:
     def _preprocess_questions(self, questions):
         return [self._preprocess_text(q) for q in questions]
 
+    # def _get_embeddings(self, texts):
+    #     inputs = self.embedding_tokenizer(texts, return_tensors='pt', padding=True, truncation=True)
+    #     with torch.no_grad():
+    #         outputs = self.embedding_model(**inputs)
+    #     return outputs.last_hidden_state.mean(dim=1).cpu().numpy()
+
     def _get_embeddings(self, texts):
-        inputs = self.embedding_tokenizer(texts, return_tensors='pt', padding=True, truncation=True)
+        inputs = self.embedding_tokenizer(texts, return_tensors='pt', padding=True, truncation=True).to(self.device)
         with torch.no_grad():
             outputs = self.embedding_model(**inputs)
-        return outputs.last_hidden_state.mean(dim=1).cpu().numpy()
+        return outputs.last_hidden_state.mean(dim=1).cpu().numpy()  
 
     def _create_faiss_index(self, embeddings):
         dim = embeddings.shape[1]
