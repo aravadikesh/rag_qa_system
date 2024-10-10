@@ -55,7 +55,7 @@ pip install -r requirements.txt
 You can run the QA system directly from the command line using the following command:
 
 ```bash
-python QA_system.py --knowledge_path knowledge.txt --questions_path questions.txt --prompt "What is NumPy?"
+python QA_system.py --knowledge knowledge.txt --questions questions.txt --prompt "What is NumPy?"
 ```
 
 - `--knowledge_path`: Path to the file containing Q&A pairs.
@@ -67,7 +67,7 @@ python QA_system.py --knowledge_path knowledge.txt --questions_path questions.tx
 Start the server:
 
 ```bash
-python server.py --knowledge_path knowledge.txt --questions_path questions.txt
+python server.py --knowledge knowledge.txt --questions questions.txt
 ```
 
 In a separate terminal window, you can interact with the server using the `client.py` script. You can specify the inputs to be sent to the server as shown below:

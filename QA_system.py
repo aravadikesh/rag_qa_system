@@ -151,8 +151,8 @@ class QASystem:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the QA system.")
-    parser.add_argument('--knowledge_path', type=str, required=True, help="Path to the knowledge file with Q&A pairs")
-    parser.add_argument('--questions_path', type=str, required=True, help="Path to the file with user questions")
+    parser.add_argument('--knowledge', type=str, required=True, help="Path to the knowledge file with Q&A pairs")
+    parser.add_argument('--questions', type=str, required=True, help="Path to the file with user questions")
     parser.add_argument('--prompt', type=str, required=False, help="Prompt to generate an answer (optional)")
     
     args = parser.parse_args()
